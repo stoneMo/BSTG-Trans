@@ -1,0 +1,51 @@
+{
+    "gpu": {
+        "use": true,
+        "id": 0
+    },
+    
+    "model": "SpatioTemporalGraphTransformer",
+    "dataset": "Human36M",
+
+    "dataset_dir": "../../data/human36",
+
+
+    "len_input": 12,
+    "len_output": 100,
+    
+    "out_dir": "out/STGT/",
+    
+    "params": {
+        "seed": 2021,
+        "epochs": 100,
+        "batch_size": 128,
+        "init_lr": 0.01,
+        "lr_reduce_factor": 0.5,
+        "lr_schedule_patience": 15,
+        "min_lr": 1e-6,
+        "weight_decay": 0.001,
+        "print_epoch_interval": 5,
+        "max_time": 50
+    },
+    
+    "net_params": {
+        "in_channels": 3,
+        "out_channels": 32,
+        "dv_factor": 0.25,
+        "dk_factor": 0.25,
+        "Nh": 8,
+        "n": 4,
+        "relative": false,
+        "only_temporal_attention": true,
+        "dropout": 0,
+        "kernel_size_temporal": 3,
+        "stride": 1,
+        "weight_matrix": 2,
+        "last": false,
+        "layer": 0,
+        "more_channels": false,
+        "drop_connect": true,
+        "num_point_in": 17,
+        "num_point_out": 32
+    }
+}
